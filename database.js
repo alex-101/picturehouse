@@ -16,11 +16,19 @@ var dataBase = [
 	},
 
 	{
-		"name": "3",
-		"date": "4",
-		"description": "no",
-		"tags": "",
-		"videoId": "ayf1sYiNLhQ"
+		"name": "Back Room Boy",
+		"date": "1942",
+		"description": "A man from the Met Office is sent to a lighthouse on a remote Scottish island to monitor the weather. He hopes to escape from women, but soon finds the island overrun by them.",
+		"tags": "arthur askey, googie withers",
+		"videoId": "Iux6eL3lnr8"
+	},
+
+	{
+		"name": "Way Out West",
+		"date": "1937",
+		"description": "Stan and Ollie are headed for the western town of Brushwood Gulch. Their mission is to find a woman named Mary Roberts in order to deliver her a deed to a valuable gold mine left to her by her father",
+		"tags": "laurel and hardy western",
+		"videoId": "T8guMIuvizI"
 	}
 ]
 
