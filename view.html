@@ -27,7 +27,7 @@
 				var id = parseInt(strid)
 			    var movie = dataBase[id];
 				document.getElementById("play").onclick = function() {
-					window.location.href = "https://www.youtube.com/watch?v="+movie.videoId;
+					window.location.href = "viewer.html?yt="+movie.videoId+"&id="+strid;
 				}
 				document.getElementById("Name").innerHTML = "Name: "+movie.name;
 				document.getElementById("Date").innerHTML = "Date: "+movie.date;
@@ -137,4 +137,3 @@
 </div>
 
 </body>
-
