@@ -1,0 +1,86 @@
+<head>
+  <script src="database.js"></script>
+  <script>
+    function topbarButton(Page) {
+      window.location.href = Page;
+    }
+  </script>
+  <script src="database.js"></script>
+  <script>
+  		window.addEventListener('load', function () {
+			  console.log(dataBase);
+			  var id = 0;
+			  for (let movie of dataBase) {
+				var html = `
+					<a style="color: inherit;" href="view.html?id=${id}">
+					<p>Title: ${movie.name}</p>
+					<p>Date: ${movie.date}</p>
+					<br>
+				</a>
+				`
+				document.getElementById("container").insertAdjacentHTML('beforeend', html);
+				id = id + 1
+			  }		
+		})
+
+  </script>
+  <style>
+    .topbar {
+      text-algin: center;
+      font-size: 20px;
+      color: #ffffff;
+      margin: 0px 20%;
+	  background-color: #2c2f33;
+    }
+    
+    .topbarButton {
+      width: 15%;
+      color: #ffffff;
+      background-color: #7289da;
+      border: none;
+      margin: 0px 5px;
+    }
+    
+	body {
+	 background-color: #23272a;
+	}
+
+    .mainbody {
+      color: #ffffff;
+	  background-color: #2c2f33;
+	  margin: 10px 20%;
+      position.y: absolute;
+    }
+	
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <a style="color: inherit;" href="index.html"><h1 style="text-align: center;">Picture House</h1></a>
+    <div style="margin: 0px 20px;">
+      <button class="topbarButton" onclick="topbarButton('new.html')">
+        New
+      </button>
+      <button class="topbarButton" onclick="topbarButton('videoindex.html')">
+        Index
+      </button>
+      <button class="topbarButton" onclick="topbarButton('search.html')">
+        Search
+      </button>
+            <button class="topbarButton" onclick="topbarButton('favorites.html')">
+      Favorites
+      </button>
+    </div>
+</div>
+
+
+<div class="mainbody">
+<br>
+<br>
+	<ol id="container">
+
+	</ol>
+</div>
+
+</body>
+

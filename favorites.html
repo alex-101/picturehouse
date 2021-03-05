@@ -1,0 +1,118 @@
+<head>
+  <script src="database.js"></script>
+  <script>
+    function topbarButton(Page) {
+      window.location.href = Page;
+    }
+	function wipe() {
+		localStorage.removeItem("favstore");
+		location.reload();
+	}
+  </script>
+    <script src="database.js"></script>
+	<script>
+        function remove(id) {
+		var defaultfav = {
+		"0": 1
+		}
+		var favstorage = defaultfav
+		if (localStorage && localStorage.getItem('favstore')) {
+		favstorage = JSON.parse(localStorage.getItem('favstore'));
+		} else {
+		favstorage = defaultfav;
+		localStorage.setItem('favstore', JSON.stringify(defaultfav));
+		}
+		if(dataBase[id]) {
+			favstorage[id] = false;
+			localStorage.setItem("favstore",JSON.stringify(favstorage))
+			location.reload()
+		}
+
+        } 
+		window.addEventListener('load', function () {
+			var id = 0
+			var defaultfav = {
+				0: true
+			}
+			var favstorage = defaultfav
+			if (localStorage && localStorage.getItem('favstore')) {
+			favstorage = JSON.parse(localStorage.getItem('favstore'));
+			} else {
+			favstorage = defaultfav;
+			localStorage.setItem('favstore', JSON.stringify(defaultfav));
+			}
+
+			for(let NewMovie of dataBase) {
+				if(favstorage[id]) {
+					var html = `
+					<a style="color: inherit;" href="view.html?id=${id}">
+					<div class="newitem">
+					<p>Name: ${NewMovie.name}</p>
+					</p> Date: ${NewMovie.date}</p>
+					</div>
+					</a>
+					<button style="background-color: red; border: none;" onclick="remove(${id});">Remove</button>
+					<br>
+					`
+					document.getElementById("mb").insertAdjacentHTML("beforeend",html)
+				}
+				id = id + 1
+			}
+		})
+	</script>
+  <style>
+    .topbar {
+      text-algin: center;
+      font-size: 20px;
+      color: #ffffff;
+      margin: 0px 20%;
+	  background-color: #2c2f33;
+    }
+    
+    .topbarButton {
+      width: 15%;
+      color: #ffffff;
+      background-color: #7289da;
+      border: none;
+      margin: 0px 5px;
+    }
+    
+	body {
+	 background-color: #23272a;
+	}
+
+    .mainbody {
+      color: #ffffff;
+	  background-color: #2c2f33;
+	  margin: 10px 20%;
+      position.y: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <a style="color: inherit;" href="index.html"><h1 style="text-align: center;">Picture House</h1></a>
+    <div style="margin: 0px 20px;">
+      <button class="topbarButton" onclick="topbarButton('new.html')">
+        New
+      </button>
+      <button class="topbarButton" onclick="topbarButton('videoindex.html')">
+        Index
+      </button>
+      <button class="topbarButton" onclick="topbarButton('search.html')">
+        Search
+      </button>
+	        <button class="topbarButton" onclick="topbarButton('favorites.html')">
+      Favorites
+      </button>
+    </div>
+</div>
+
+
+<div class="mainbody" id="mb">
+	<h2>Favorites.<h2>
+	<h3>This data is stored locally. Click <a onclick="wipe()" style="color: blue;">here</a> to wipe your data.</h3> 
+</div>
+<h1 style="text-align: center; color: white;">@SetAsync#0001</h1>
+</body>
+
