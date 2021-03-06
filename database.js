@@ -32,11 +32,18 @@ var dataBase = [
 	},
 
 	{
-		"name": "Way Out West",
-		"date": "1937",
-		"description": "Stan and Ollie are headed for the western town of Brushwood Gulch. Their mission is to find a woman named Mary Roberts in order to deliver her a deed to a valuable gold mine left to her by her father",
-		"tags": "laurel and hardy western",
-		"videoId": "T8guMIuvizI"
+		"name": "Pack Up Your Troubles",
+		"date": "1932",
+		"description": "he boys' Army buddy, Eddie Smith, is killed in the trenches in France, leaving his baby girl an orphan. Back home.",
+		"tags": "pardon us stan ollie hardy laruel pack bag richard currier april 1917 1932",
+		"videoId": "9j2Laetj1_k"
+	},
+	
+	{
+		"name": "The Runaway Bus",
+		"date": "1954",
+		"description": "When heavy fog prevents all aircraft from leaving London airport, a group of passengers take an airline bus to get them to an alternative airport. However, one amongst their number is the mastermind behind a bullion robbery at the airport... and particularly keen to escape the fog.",
+		"tags": "bus run away restored airport gold",
+		"videoId": "nWCOX0_wp_I"
 	}
 ]
-
